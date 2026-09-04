@@ -14,6 +14,10 @@
 <meta property="og:description" content="Simple and fast restaurant order management for waiters, cafés and food businesses.">
 <meta property="og:image" content="https://play-lh.googleusercontent.com/L1AKiWXL8lx1OqGWu7SrYQqlpNNqitv-3hWHTWEqOCZ4A9SZhUhIzt0U_VQSiQNjb_J9SYCy4qnfEYxapyt7Zw=w5120-h2880-rw">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -33,66 +37,62 @@
 
 <style>
 :root{
-  --bg:#f7f9fc; --white:#fff; --text:#172033; --muted:#667388;
-  --blue:#0877d1; --blue2:#1597ee; --soft:#eef7ff; --line:#e3e9f1;
-  --max:1180px; --radius:24px;
+  --bg:#f6f5f1; --white:#fff; --text:#17211c; --muted:#68736d;
+  --accent:#e56b3f; --accent-dark:#bd4d29; --soft:#fff0e9; --line:#dedfd8;
+  --green:#254d3b; --max:1180px; --radius:18px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  color:var(--text);line-height:1.65;background:
-  radial-gradient(circle at 8% 0%,rgba(21,151,238,.10),transparent 30rem),
-  radial-gradient(circle at 92% 8%,rgba(8,119,209,.07),transparent 28rem),var(--bg)
+  margin:0;font-family:"DM Sans",system-ui,sans-serif;
+  color:var(--text);line-height:1.65;background-color:var(--bg);
+  background-image:linear-gradient(rgba(37,77,59,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(37,77,59,.035) 1px,transparent 1px);
+  background-size:42px 42px
 }
 a{text-decoration:none;color:inherit}
 img{display:block;max-width:100%}
 .container{width:min(var(--max),calc(100% - 40px));margin:auto}
 
 .nav{
-  position:sticky;top:0;z-index:50;background:rgba(255,255,255,.90);
-  backdrop-filter:blur(18px);border-bottom:1px solid var(--line);
-  box-shadow:0 4px 18px rgba(25,45,70,.04)
+  position:sticky;top:0;z-index:50;background:rgba(246,245,241,.92);
+  backdrop-filter:blur(18px);border-bottom:1px solid var(--line)
 }
-.nav-inner{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{display:flex;align-items:center;gap:12px;font-weight:800}
-.brand img{width:42px;height:42px;border-radius:11px}
-.nav-links{display:flex;gap:25px;color:#5f6c80;font-size:.93rem}
-.nav-links a:hover{color:var(--blue)}
+.nav-inner{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;font-family:"Space Grotesk",sans-serif;font-weight:700;letter-spacing:-.02em}
+.brand img{width:40px;height:40px;border-radius:10px}
+.nav-links{display:flex;gap:25px;color:#68736d;font-size:.9rem;font-weight:600}
+.nav-links a:hover{color:var(--accent)}
 
-.hero{padding:88px 0 80px}
+.hero{padding:96px 0 88px}
 .hero-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:60px}
 .eyebrow{
-  display:inline-flex;padding:7px 13px;border:1px solid #cfe8fb;
-  background:var(--soft);color:var(--blue);border-radius:999px;
-  font-size:.78rem;font-weight:800;letter-spacing:.08em;margin-bottom:20px
+  display:inline-flex;padding:7px 13px;border:1px solid #f1cdbd;
+  background:var(--soft);color:var(--accent-dark);border-radius:6px;
+  font-size:.72rem;font-weight:800;letter-spacing:.12em;margin-bottom:20px
 }
+h1,h2,h3{font-family:"Space Grotesk",sans-serif}
 h1{font-size:clamp(3rem,6vw,5.3rem);line-height:.98;letter-spacing:-.055em;margin:0 0 22px}
 .hero-copy{color:var(--muted);font-size:1.1rem;max-width:650px}
 .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin:30px 0}
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:9px;
-  min-height:50px;padding:0 20px;border-radius:13px;font-weight:800;
-  border:1px solid #dce3ec;transition:.2s
+  min-height:50px;padding:0 20px;border-radius:9px;font-weight:800;
+  border:1px solid var(--line);transition:.2s
 }
 .btn:hover{transform:translateY(-2px)}
-.btn-primary{color:#fff;background:linear-gradient(135deg,var(--blue2),var(--blue));border:0;box-shadow:0 12px 30px rgba(8,119,209,.18)}
+.btn-primary{color:#fff;background:var(--green);border:0;box-shadow:0 12px 25px rgba(37,77,59,.2)}
 .btn-secondary{background:#fff}
 .hero-meta{display:flex;flex-wrap:wrap;gap:18px;color:var(--muted);font-size:.9rem}
 .hero-meta strong{color:var(--text)}
 .hero-visual{position:relative;display:grid;place-items:center}
-.hero-visual:before{
-  content:"";position:absolute;width:430px;height:430px;border-radius:50%;
-  background:rgba(22,137,232,.13);filter:blur(70px)
-}
 .hero-shot{
-  width:min(100%,620px);height:auto;position:relative;border-radius:25px;
-  border:1px solid #dce7f2;box-shadow:0 30px 65px rgba(35,64,95,.16)
+  width:min(100%,620px);height:auto;position:relative;border-radius:18px;
+  border:1px solid #d5d8d0;box-shadow:18px 18px 0 rgba(229,107,63,.14),0 30px 65px rgba(38,53,44,.14)
 }
 
 section{padding:92px 0}
 .section-head{max-width:750px;margin-bottom:40px}
-.kicker{color:var(--blue);text-transform:uppercase;letter-spacing:.15em;font-size:.75rem;font-weight:800;margin-bottom:10px}
+.kicker{color:var(--accent-dark);text-transform:uppercase;letter-spacing:.15em;font-size:.72rem;font-weight:800;margin-bottom:10px}
 h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.05;letter-spacing:-.045em;margin:0 0 14px}
 .section-head p{color:var(--muted)}
 
@@ -100,18 +100,18 @@ h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.05;letter-spacing:-.045em;marg
 .panel{padding:30px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 12px 35px rgba(30,55,85,.06)}
 .panel p:last-child{margin-bottom:0}
 .stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.stat{padding:20px;border-radius:18px;background:#fff;border:1px solid var(--line);box-shadow:0 8px 24px rgba(30,55,85,.045)}
+.stat{padding:20px;border-radius:12px;background:#fff;border:1px solid var(--line);box-shadow:0 8px 24px rgba(38,53,44,.045)}
 .stat strong{display:block;font-size:1.15rem}.stat span{color:var(--muted);font-size:.84rem}
 
 .features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.feature{padding:25px;background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 8px 24px rgba(30,55,85,.045)}
-.icon{width:46px;height:46px;display:grid;place-items:center;border-radius:14px;background:var(--soft);border:1px solid #d6ebfb;font-size:1.25rem;margin-bottom:18px}
+.feature{padding:25px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 8px 24px rgba(38,53,44,.045)}
+.icon{width:42px;height:42px;display:grid;place-items:center;border-radius:9px;background:var(--green);color:#fff;font-family:"Space Grotesk",sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.05em;margin-bottom:18px}
 .feature h3{margin:0 0 8px}.feature p{margin:0;color:var(--muted);font-size:.92rem}
 
 .screenshot-section{background:#fff;border-top:1px solid #edf1f5;border-bottom:1px solid #edf1f5}
 .screens{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start}
 .screen{
-  margin:0;overflow:hidden;border-radius:20px;background:#fff;
+  margin:0;overflow:hidden;border-radius:12px;background:#fff;
   border:1px solid #dfe6ef;box-shadow:0 14px 34px rgba(30,55,85,.08);
   transition:.2s
 }
@@ -126,10 +126,10 @@ h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.05;letter-spacing:-.045em;marg
 }
 
 .showcase{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.showcase img{width:100%;height:auto;border-radius:20px;border:1px solid #dfe6ef;box-shadow:0 18px 42px rgba(30,55,85,.09)}
+.showcase img{width:100%;height:auto;border-radius:12px;border:1px solid #dfe6ef;box-shadow:0 18px 42px rgba(38,53,44,.09)}
 
 .use-cases{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.use-case{padding:22px;border-radius:18px;background:#fff;border:1px solid var(--line);box-shadow:0 8px 24px rgba(30,55,85,.045)}
+.use-case{padding:22px;border-radius:12px;background:#fff;border:1px solid var(--line);box-shadow:0 8px 24px rgba(38,53,44,.045)}
 .use-case strong{display:block;margin-bottom:5px}.use-case span{color:var(--muted);font-size:.9rem}
 
 .details{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
@@ -137,11 +137,10 @@ h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.05;letter-spacing:-.045em;marg
 .detail:nth-child(odd){border-right:1px solid var(--line)}.detail span{color:var(--muted)}.detail strong{text-align:right}
 
 .cta{
-  padding:62px;text-align:center;border-radius:32px;
-  background:radial-gradient(circle at 50% 0%,rgba(22,137,232,.13),transparent 42%),linear-gradient(135deg,#f1f8ff,#fff);
-  border:1px solid #d5e9fa;box-shadow:0 18px 45px rgba(30,55,85,.07)
+  padding:62px;text-align:center;border-radius:18px;
+  background:var(--green);color:#fff;border:1px solid var(--green);box-shadow:0 18px 45px rgba(38,53,44,.16)
 }
-.cta p{color:var(--muted);max-width:680px;margin:0 auto 25px}
+.cta .kicker{color:#f3b39b}.cta p{color:#d8e2dc;max-width:680px;margin:0 auto 25px}
 footer{padding:45px 0;color:var(--muted);border-top:1px solid var(--line);font-size:.88rem}
 .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 
@@ -219,12 +218,12 @@ footer{padding:45px 0;color:var(--muted);border-top:1px solid var(--line);font-s
 <div class="container">
   <div class="section-head"><div class="kicker">Key features</div><h2>Everything needed for a smoother ordering workflow.</h2></div>
   <div class="features">
-    <article class="feature"><div class="icon">📋</div><h3>Quick Order Taking</h3><p>Add menu items, quantities and prices quickly while serving customers.</p></article>
-    <article class="feature"><div class="icon">🪑</div><h3>Table-Wise Orders</h3><p>Keep customer orders organized by restaurant table for easier service.</p></article>
-    <article class="feature"><div class="icon">🧮</div><h3>Automatic Totals</h3><p>Calculate item totals and order amounts automatically to reduce mistakes.</p></article>
-    <article class="feature"><div class="icon">🧾</div><h3>Receipt Printing</h3><p>Print clear, professional receipts for completed customer orders.</p></article>
-    <article class="feature"><div class="icon">🗂️</div><h3>Order History</h3><p>Save and review previous orders when you need to check past transactions.</p></article>
-    <article class="feature"><div class="icon">📶</div><h3>Works Offline</h3><p>Continue managing orders without depending on an internet connection.</p></article>
+    <article class="feature"><div class="icon">01</div><h3>Quick Order Taking</h3><p>Add menu items, quantities and prices quickly while serving customers.</p></article>
+    <article class="feature"><div class="icon">02</div><h3>Table-Wise Orders</h3><p>Keep customer orders organized by restaurant table for easier service.</p></article>
+    <article class="feature"><div class="icon">03</div><h3>Automatic Totals</h3><p>Calculate item totals and order amounts automatically to reduce mistakes.</p></article>
+    <article class="feature"><div class="icon">04</div><h3>Receipt Printing</h3><p>Print clear, professional receipts for completed customer orders.</p></article>
+    <article class="feature"><div class="icon">05</div><h3>Order History</h3><p>Save and review previous orders when you need to check past transactions.</p></article>
+    <article class="feature"><div class="icon">06</div><h3>Works Offline</h3><p>Continue managing orders without depending on an internet connection.</p></article>
   </div>
 </div>
 </section>
